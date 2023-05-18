@@ -20,6 +20,7 @@
   position: absolute;
   bottom: -50px;
   left: 20px;
+  z-index: 3000;
 }
 
 .formacao .subtitulo {
