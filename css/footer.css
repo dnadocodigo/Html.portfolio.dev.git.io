@@ -1,3 +1,4 @@
+
 .footer {
   background: #000;
 }
@@ -8,8 +9,7 @@
   grid-template-columns: 1fr 1fr;
   margin: 0 auto;
   gap: 100px;
-  align-items: center;
-  z-index: 500;
+  align-items: center;  
 }
 .footer-text {
   color: #ccc;
@@ -29,7 +29,7 @@
   grid-column: 1 / -1;
   color: #8f8f8f;
   font-size: 1.125rem;
-  text-align: center;
+  text-align: center;  
 }
 @media (max-width: 1000px) {
   .footer-contato li{
