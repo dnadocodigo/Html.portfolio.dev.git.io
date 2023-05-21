@@ -25,6 +25,9 @@
 .footer-contato li a {
   color: #fff;
 }
+.footer-contato li a:hover {
+  color: #70da1c;
+}
 .footer-copy {
   grid-column: 1 / -1;
   color: #8f8f8f;
