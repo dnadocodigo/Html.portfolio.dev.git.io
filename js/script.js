@@ -1,3 +1,4 @@
-import scrollInit from "../js/modules/scroll.js";
+import SoftScroll from "../js/modules/scroll.js";
 
-scrollInit();
+const softScroll = new SoftScroll('.js-menu a[href^="#"]');
+softScroll.init();
