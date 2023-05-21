@@ -1,53 +1,31 @@
-export default function softScrollInit(){
-  const classActive = 'active';
-  function softScrollInit(){
-    const links = document.querySelectorAll('.js-menu a[href^="#"]');
-    
-      function softScroll(event){
-        event.preventDefault();
-      const hrefs = event.currentTarget.getAttribute('href');
-      const sectionsHref = document.querySelector(hrefs);
-  
-      sectionsHref.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
-  
-        // Método altenativo
-            // const top = sectionsHref.offsetTop;
-  
-            // window.scrollTo({
-            //     top : top,
-            //     behavior: 'smooth'
-            // });
-  
-      }
-  
-      links.forEach((link)=>{
-        link.addEventListener('click', softScroll);
-      });
-  }
-  function ScrollanimeInit(){
-    const sections = document.querySelectorAll('.js-scroll');
-
-    if(sections.length){
-      const halfWindow = window.innerHeight * 0.5;
-
-      function scrollanimed(){
-        sections.forEach((section) =>{
-          const sectionTop = section.getBoundingClientRect().top;
-          const isSectionVisibility = (sectionTop - halfWindow) < 0;
-
-          if(isSectionVisibility){
-            section.classList.add(classActive);
-          }
-        })
-      }
-      scrollanimed();
-      window.addEventListener('scroll', scrollanimed);
+export default class SoftScroll {
+  constructor(links, options) {
+    const classActive = "active";
+    this.linksInternos = document.querySelectorAll(links);
+    if (options === undefined) {
+      this.options = { behavior: "smooth", block: "start" };
+    } else {
+      this.options = options;
     }
+    this.softScrollSection = this.softScrollSection.bind(this);
   }
 
-  softScrollInit();
-  ScrollanimeInit();
+  softScrollSection(event) {
+    event.preventDefault();
+    const hrefs = event.currentTarget.getAttribute("href");
+    const sectionsHref = document.querySelector(hrefs);
+    sectionsHref.scrollIntoView(this.options);
+  }
+  softScroll;
+  addLinksEvents() {
+    this.linksInternos.forEach((link) => {
+      link.addEventListener("click", this.softScrollSection);
+    });
+  }
+  init() {
+    if (this.linksInternos.length) {
+      this.addLinksEvents();
+    }
+    return this;
+  }
 }

@@ -1,4 +1,4 @@
-
+/* 
 @keyframes slideDown{
   from{
     opacity: 0;
@@ -17,4 +17,4 @@
 .js-enable .js-scroll.active{
   opacity: 1;
   transform: translate3d(0, 0, 0);
-}
+} */
