@@ -1,4 +1,4 @@
-export default class SoftScroll {
+class SoftScroll {
   constructor(links, options) {
     const classActive = "active";
     this.linksInternos = document.querySelectorAll(links);
@@ -29,3 +29,4 @@ export default class SoftScroll {
     return this;
   }
 }
+export default SoftScroll;
